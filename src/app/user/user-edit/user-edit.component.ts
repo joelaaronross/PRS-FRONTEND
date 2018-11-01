@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+
 import { UserService } from '../user.service';
 import { User } from '../user.class';
 
@@ -14,7 +15,7 @@ export class UserEditComponent implements OnInit {
 user: User;
 
 save(): void{
-  this.usersvc.add(this.user)
+  this.usersvc.change(this.user)
   .subscribe(resp=> {
     console.log("resp", resp);
     this.router.navigateByUrl('/users/List');

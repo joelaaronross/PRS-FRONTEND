@@ -13,5 +13,6 @@ export class User {
         this.id=0;
         this.reviewer=false;
         this.admin=false;
+        this.password = 'password';
     }
 }
