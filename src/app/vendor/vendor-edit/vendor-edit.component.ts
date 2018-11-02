@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { VendorService } from '../vendor.service';
 import { Vendor } from '../vendor.class';
@@ -14,7 +14,7 @@ export class VendorEditComponent implements OnInit {
   vendor: Vendor = new Vendor();
 
   save(): void {
-    this.usersvc.add(this.vendor)
+    this.vendorsvc.change(this.vendor)
     .subscribe(resp => {
       console.log("resp", resp);
       this.router.navigateByUrl('/vendors/list');
@@ -22,7 +22,7 @@ export class VendorEditComponent implements OnInit {
   }
 
   constructor(
-    private usersvc: VendorService,
+    private vendorsvc: VendorService,
     private router: Router
   ) { }
 

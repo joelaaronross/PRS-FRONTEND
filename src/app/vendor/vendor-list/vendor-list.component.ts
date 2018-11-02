@@ -12,10 +12,10 @@ export class VendorListComponent implements OnInit {
 
   vendors:Vendor[];
 
-  constructor(private usersvc: VendorService) { }
+  constructor(private vendorsvc: VendorService) { }
 
   ngOnInit() {
-    this.usersvc.list()
+    this.vendorsvc.list()
       .subscribe(resp =>{
         console.log('Vendors:', resp.data);
         this.vendors=resp.data

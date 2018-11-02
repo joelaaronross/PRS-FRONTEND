@@ -50,7 +50,7 @@
           <input [(ngModel)]="user.email" class="form-control" type="text" name="email"
             #email="ngModel">
         </div>
-        <div *ngIf="email.invalid && lastname.touched" class="col-form-label col-sm-2 text-danger">
+        <div *ngIf="email.invalid && email.touched" class="col-form-label col-sm-2 text-danger">
           <label *ngIf="email?.errors.required">Required</label>
           <label *ngIf="email?.errors.minlength">8 chars min</label>
         </div>

@@ -15,14 +15,14 @@ export class VendorDetailComponent implements OnInit {
   vendor:Vendor;
 
   delete(): void{
-    this.usersvc.remove(this.vendor)
+    this.vendorsvc.remove(this.vendor)
       .subscribe(resp =>{
         console.log("resp:", resp);
         this.router.navigateByUrl('/vendors/list');
       });
   }
 
-  constructor(private usersvc: VendorService, 
+  constructor(private vendorsvc: VendorService, 
     private route: ActivatedRoute,
     private router: Router
     ) { }
@@ -31,7 +31,7 @@ export class VendorDetailComponent implements OnInit {
   //gets the :id from the router
   let id = this.route.snapshot.params.id;
   //get the user from the user service
-  this.usersvc.get(id)
+  this.vendorsvc.get(id)
   .subscribe(resp => {
     console.log("resp: ", resp);
     this.vendor = resp.data;

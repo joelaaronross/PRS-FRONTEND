@@ -22,7 +22,7 @@
           <input [(ngModel)]="vendor.name" class="form-control" type="text" name="name" #name="ngModel"
             required minlength="8">
         </div>
-        <div *ngIf="name.invalid && firstName.touched" class="col-form-label col-sm-2 text-danger">
+        <div *ngIf="name.invalid && name.touched" class="col-form-label col-sm-2 text-danger">
           <label *ngIf="name?.errors.required">Required</label>
         </div>
       </div>

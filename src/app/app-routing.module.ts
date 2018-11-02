@@ -10,6 +10,10 @@ import {VendorDetailComponent} from './vendor/vendor-detail/vendor-detail.compon
 import {VendorCreateComponent} from './vendor/vendor-create/vendor-create.component';
 import {VendorEditComponent} from './vendor/vendor-edit/vendor-edit.component';
 
+import {ProductListComponent} from './product/product-list/product-list.component';
+import {ProductDetailComponent} from './product/product-detail/product-detail.component';
+import {ProductCreateComponent} from './product/product-create/product-create.component';
+import {ProductEditComponent} from './product/product-edit/product-edit.component';
 
 
 
@@ -31,6 +35,11 @@ const routes: Routes = [
   {path: 'vendors/create', component: VendorCreateComponent},
   {path: 'vendors/detail/:id', component: VendorDetailComponent},
   {path: 'vendors/edit/:id', component: VendorEditComponent},
+
+  {path: 'products/list', component: ProductListComponent},
+  {path: 'products/create', component: ProductCreateComponent},
+  {path: 'products/detail/:id', component: ProductDetailComponent},
+  {path: 'products/edit/:id', component: ProductEditComponent},
 
   {path:'home', component: HomeComponent},
   {path:'about', component: AboutComponent},

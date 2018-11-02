@@ -14,14 +14,14 @@ export class VendorCreateComponent implements OnInit {
   vendor: Vendor = new Vendor();
 
   save(): void {
-    this.usersvc.add(this.vendor)
+    this.vendorsvc.add(this.vendor)
     .subscribe(resp => {
       console.log("resp", resp);
       this.router.navigateByUrl('/vendors/list');
     });
   }
   constructor(
-    private usersvc: VendorService,
+    private vendorsvc: VendorService,
     private router: Router
   ) { }
 
