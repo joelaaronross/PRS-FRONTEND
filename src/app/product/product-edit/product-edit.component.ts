@@ -20,17 +20,31 @@ export class ProductEditComponent implements OnInit {
     this.productsvc.change(this.product)
     .subscribe(resp=>{
       console.log("resp", resp);
-      this.router.navigateByUrl('/product/list');
+      this.router.navigateByUrl('/products/list');
 
     });
   }
 
   constructor(
     private productsvc: ProductService,
+    private vendorsvc: VendorService,
+    private route: ActivatedRoute,
     private router: Router
   ) { }
 
   ngOnInit() {
+    let id = this.route.snapshot.params.id;
+    this.productsvc.get(id)
+      .subscribe(resp => {
+        console.log("resp:", resp);
+        this.product = resp.data;
+      });
+
+    this.vendorsvc.list()
+      .subscribe(resp => {
+        console.log("Resp:", resp);
+        this.vendor = resp.data;
+      });
   }
 
 }
