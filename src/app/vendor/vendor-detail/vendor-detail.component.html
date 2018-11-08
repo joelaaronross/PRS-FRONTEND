@@ -1,22 +1,21 @@
 <app-menu></app-menu>
-<div>
+<div class="component">
     <div>
       <span>Vendor Detail</span>
     </div>
     <p *ngIf="!vendor">Retrieving data...this may take a while</p>
-    <table class="table table-sm" *ngIf="vendor">
-      
+    <div *ngIf='vendor'>
+    <table class="table table-sm" *ngIf="vendor">     
       <tr><td>Id:</td><td>{{ vendor.id }}</td></tr>
       <tr><td>Code:</td><td>{{ vendor.code }}</td></tr>
       <tr><td>Name:</td><td>{{ vendor.name }}</td></tr>
-      <tr><td>Address:</td><td>{{ vendor.address }}</td></tr>
-      <tr><td>City:</td><td>{{ vendor.city }}</td></tr> 
+      <tr><td>Address:</td><td>{{ vendor.address }}, {{ vendor.city }}, {{ vendor.State }}, {{ vendor.Zip }}</td></tr>
       <tr><td>Phone:</td><td>{{ vendor.admin ? "Yes" : "No" }}</td></tr>
       <tr><td>Email:</td><td>{{ vendor.email }}</td></tr>
       <tr><td>IsPreapproved?:</td><td>{{ vendor.isPreApproved ? "Yes" : "No" }}</td></tr>
-      <tr><td>Active:</td><td>{{ vendor.admin ? "Yes" : "No" }}</td></tr>
     </table>
-    <div>
-      <button class="btn btn-danger" (click)="delete()">Delete</button>
+    <div *ngIf='isAdmin'>
+        <a routerLink="/vendors/edit/{{vendor.Id}}" class="btn btn-warning">Edit</a>
+    | <button class="btn btn-danger" (click)="delete()">Delete</button>
     </div>
   </div>

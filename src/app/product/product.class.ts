@@ -1,3 +1,5 @@
+import { Vendor } from '../vendor/vendor.class';
+
 export class Product {
     id: number;
     partName: string;
@@ -6,9 +8,10 @@ export class Product {
     unit: string;
     photoPath: string;
     vendor: string;
-    action: string;
+    
 
     constructor(){
         this.id=0;
+        this.price = 0;
     }
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
+import { SystemService } from '../../system/system.service';
 import { VendorService } from '../vendor.service';
 import { Vendor } from '../vendor.class';
 
@@ -12,6 +13,7 @@ import { Vendor } from '../vendor.class';
 })
 export class VendorDetailComponent implements OnInit {
 
+  isAdmin: boolean;
   vendor:Vendor;
 
   delete(): void{
@@ -22,22 +24,22 @@ export class VendorDetailComponent implements OnInit {
       });
   }
 
-  constructor(private vendorsvc: VendorService, 
+  constructor(
+    private sys: SystemService,
+    private vendorsvc: VendorService, 
     private route: ActivatedRoute,
     private router: Router
     ) { }
 
   ngOnInit() {
-  //gets the :id from the router
+  this.sys.checkForLogin();
   let id = this.route.snapshot.params.id;
-  //get the user from the user service
   this.vendorsvc.get(id)
   .subscribe(resp => {
     console.log("resp: ", resp);
     this.vendor = resp.data;
-
-
   });
+  this.isAdmin = (this.sys.user != null) ? this.sys.user.isAdmin : false;
 }
 
 }

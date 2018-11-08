@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
+import { SystemService } from '../system/system.service';
 import { Request } from './request.class';
 import { JsonResponse } from '../util/json-response.class';
 
@@ -10,9 +11,14 @@ const url = 'http://localhost:8080/PurchaseRequests/';
 @Injectable({
     providedIn: 'root'
   })
-  export class PurchaseRequestService {
+  export class RequestService {
   
-  
+    review(id): Observable<JsonResponse> {
+      return this.http.get(url + 'Review/' + id) as Observable<JsonResponse>;
+    }
+    reviews(userid): Observable<JsonResponse> {
+      return this.http.get(url + "Reviewlist/" + userid) as Observable<JsonResponse>;
+    }
     list(): Observable<JsonResponse> {
       return this.http.get(url + "List") as Observable<JsonResponse>;
     }
@@ -29,5 +35,5 @@ const url = 'http://localhost:8080/PurchaseRequests/';
       return this.http.post(url + "Remove", request) as Observable<JsonResponse>;
     }
   
-    constructor(private http: HttpClient) { }
+    constructor(private http: HttpClient,  private sys: SystemService,) { }
   }

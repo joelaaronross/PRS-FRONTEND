@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { SystemService } from '../../system/system.service';
 
 import { ProductService } from '../product.service';
 import { Product } from '../product.class';
@@ -26,6 +27,7 @@ export class ProductEditComponent implements OnInit {
   }
 
   constructor(
+    private sys: SystemService,
     private productsvc: ProductService,
     private vendorsvc: VendorService,
     private route: ActivatedRoute,
@@ -33,6 +35,7 @@ export class ProductEditComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.sys.checkForLogin();
     let id = this.route.snapshot.params.id;
     this.productsvc.get(id)
       .subscribe(resp => {

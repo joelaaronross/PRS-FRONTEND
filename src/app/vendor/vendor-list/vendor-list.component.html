@@ -3,6 +3,7 @@
     <div>
       <span>Vendor List |</span>
       <a routerLink='/vendors/create'> Create New</a>
+      <span *ngIf='isAdmin'>  <a routerLink='/vendors/create'>Create New</a></span>
     </div>
       <table class="table table-sm">
         <thead>
@@ -15,7 +16,7 @@
             <td>IsPreapproved</td>
             <td>Phone</td>
             <td>Email</td>
-            <td>Active</td>
+            <td>Action</td>
           </tr>
         </thead>
         <tbody>
@@ -24,11 +25,9 @@
             <td>{{ vendor.code }}</td>
             <td>{{ vendor.name }}</td>
             <td>{{ vendor.address }}</td>
-            <td>{{ vendor.city }}</td>
-            <td>{{ vendor.isPreApproved ?"Yes" : "No" }}</td>
+            <td>{{ vendor.city }}, {{ vendor.state }} {{ vendor.zip }}</td>
             <td>{{ vendor.phone }}</td>
             <td>{{ vendor.email }}</td>
-            <td>{{ vendor.active }}</td> 
             <td>
               <a routerLink='/vendors/detail/{{vendor.id}}'>Detail</a>
               | <a routerLink='/vendors/edit/{{vendor.id}}'>Edit</a>

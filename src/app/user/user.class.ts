@@ -6,13 +6,13 @@ export class User {
     email: string;
     password: string;
     phoneNumber: string;
-    reviewer: boolean;
-    admin: boolean;
+    isReviewer: boolean;
+    isAdmin: boolean;
 
     constructor(){
         this.id=0;
-        this.reviewer=false;
-        this.admin=false;
+        this.isReviewer=false;
+        this.isAdmin=false;
         this.password = 'password';
     }
 }

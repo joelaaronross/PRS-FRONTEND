@@ -2,24 +2,24 @@ import { User } from "../user/user.class";
 
 export class Request {
 
-    Id: number;
-    Description: string;
-    Justification: string;
-    RejectionReason: string;
-    DeliveryMode: string;
-    SubmittedDate: string;
-    Status: string;
-    Total: number;
-    Active: boolean;
-    UserId: number;
-    User: User;
+    id: number;
+    description: string;
+    justification: string;
+    rejectionReason: string;
+    deliveryMode: string;
+    submittedDate: string;
+    status: string;
+    total: number;
+    active: boolean;
+    userId: number;
+    user: User;
 
     constructor() {
-        this.Id = 0;
-        this.Total = 0;
-        this.DeliveryMode = "Pickup";
-        this.SubmittedDate = (new Date()).toLocaleDateString();
-        this.Status = "NEW";
-        this.Active = true;
+        this.id = 0;
+        this.total = 0;
+        this.deliveryMode = "Pickup";
+        this.submittedDate = (new Date()).toLocaleDateString();
+        this.status = "NEW";
+        this.active = true;
     }
 }

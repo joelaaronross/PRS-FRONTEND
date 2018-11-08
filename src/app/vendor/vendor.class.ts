@@ -1,19 +1,20 @@
 export class Vendor {
-    Id: number;
-    Code: string;
-    Name: string;
-    Address: string;
-    City: string;
-    State: string;
-    Zip: string;
-    IsPreapproved: boolean;
-    Phone: string;
-    Email: string;
+    id: number;
+    code: string;
+    name: string;
+    address: string;
+    city: string;
+    state: string;
+    zip: string;
+    isPreapproved: boolean;
+    phone: string;
+    email: string;
+    active: boolean;
     
 
     constructor() {
-        this.Id=0;
-        this.IsPreapproved=false;
-        
+        this.id=0;
+        this.isPreapproved=false;
+        this.active = true;
     }
 }
