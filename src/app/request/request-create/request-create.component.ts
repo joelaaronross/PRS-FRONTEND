@@ -35,7 +35,7 @@ export class RequestCreateComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.sys.checkForLogin();
+    // this.sys.checkForLogin();
     this.request.userId = this.sys.user.id;
   }
 

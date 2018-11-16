@@ -32,7 +32,7 @@ save(): void{
 
 
   ngOnInit() {
-    this.sys.checkForLogin();
+    // this.sys.checkForLogin();
     let id=this.route.snapshot.params.id;
     this.usersvc.get(id)
     .subscribe(resp => {

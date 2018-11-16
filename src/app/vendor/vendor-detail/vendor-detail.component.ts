@@ -32,7 +32,7 @@ export class VendorDetailComponent implements OnInit {
     ) { }
 
   ngOnInit() {
-  this.sys.checkForLogin();
+  // this.sys.checkForLogin();
   let id = this.route.snapshot.params.id;
   this.vendorsvc.get(id)
   .subscribe(resp => {

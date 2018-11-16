@@ -38,7 +38,7 @@ export class ReqlineCreateComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.sys.checkForLogin();
+    // this.sys.checkForLogin();
     this.prid = this.route.snapshot.params.prid;
 
     this.productsvc.list()

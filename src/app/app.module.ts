@@ -30,7 +30,7 @@ import { ReqlineDetailComponent } from './reqline/reqline-detail/reqline-detail.
 import { ReqlineEditComponent } from './reqline/reqline-edit/reqline-edit.component';
 import { ReqlineCreateComponent } from './reqline/reqline-create/reqline-create.component';
 import { RequestLinesComponent } from './request/request-lines/request-lines.component';
-import { UserLoginComponent } from './user/user-login/user-login.component';
+// import { UserLoginComponent } from './user/user-login/user-login.component';
 import { RequestReviewDetailComponent } from './request/request-review-detail/request-review-detail.component';
 import { RequestReviewListComponent } from './request/request-review-list/request-review-list.component';
 
@@ -69,7 +69,7 @@ import { RequestReviewListComponent } from './request/request-review-list/reques
     RequestLinesComponent,
     RequestReviewDetailComponent,
     RequestReviewListComponent,
-    UserLoginComponent,
+    // UserLoginComponent,
     ReqlineEditComponent,
     ReqlineDetailComponent,
     ReqlineCreateComponent,

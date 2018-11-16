@@ -17,7 +17,7 @@ export class VendorListComponent implements OnInit {
   constructor(private vendorsvc: VendorService, private sys: SystemService) { }
 
   ngOnInit() {
-    this.sys.checkForLogin();
+    // this.sys.checkForLogin();
     this.vendorsvc.list()
       .subscribe(resp =>{
         console.log('Vendors:', resp.data);

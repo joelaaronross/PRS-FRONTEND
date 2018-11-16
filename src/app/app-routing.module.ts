@@ -4,7 +4,7 @@ import {UserListComponent} from './user/user-list/user-list.component';
 import {UserDetailComponent} from './user/user-detail/user-detail.component';
 import {UserCreateComponent} from './user/user-create/user-create.component';
 import {UserEditComponent} from './user/user-edit/user-edit.component';
-import {UserLoginComponent } from './user/user-login/user-login.component';
+// import {UserLoginComponent } from './user/user-login/user-login.component';
 
 import {VendorListComponent} from './vendor/vendor-list/vendor-list.component';
 import {VendorDetailComponent} from './vendor/vendor-detail/vendor-detail.component';
@@ -43,7 +43,7 @@ const routes: Routes = [
   {path: 'users/create', component: UserCreateComponent},
   {path: 'users/detail/:id', component: UserDetailComponent},
   {path: 'users/edit/:id', component: UserEditComponent},
-  {path: 'users/login', component: UserLoginComponent},
+  // {path: 'users/login', component: UserLoginComponent},
 
   {path: 'vendors/list', component: VendorListComponent},
   {path: 'vendors/create', component: VendorCreateComponent},

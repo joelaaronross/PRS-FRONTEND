@@ -31,7 +31,7 @@ export class UserDetailComponent implements OnInit {
     ) { }
 
   ngOnInit() {
-    this.sys.checkForLogin();
+    // this.sys.checkForLogin();
     let id = this.route.snapshot.params.id;
     this.usersvc.get(id)
     .subscribe(resp => {

@@ -22,7 +22,7 @@ export class RequestLinesComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.sys.checkForLogin();
+    // this.sys.checkForLogin();
     let id = this.route.snapshot.params.id;
     console.log("PrId:", id);
     this.requestsvc.get(id)

@@ -18,7 +18,7 @@ export class RequestListComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.sys.checkForLogin();
+    // this.sys.checkForLogin();
     this.requestsvc.list()
       .subscribe(resp => {
         console.log("Requests:", resp);

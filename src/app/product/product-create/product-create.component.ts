@@ -31,7 +31,7 @@ export class ProductCreateComponent implements OnInit {
     private router: Router
   ) { }
   ngOnInit() {
-    this.sys.checkForLogin();
+    // this.sys.checkForLogin();
     this.vendorsvc.list()
       .subscribe(resp => {
         console.log("Vendors:", resp);
